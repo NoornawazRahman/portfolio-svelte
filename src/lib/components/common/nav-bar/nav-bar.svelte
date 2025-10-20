@@ -57,7 +57,7 @@
 			</a>
 		{/each}
 	</div>
-	<div class="hidden flex-row items-center justify-end gap-2 sm:flex sm:flex-1">
+	<div class="hidden flex-row items-center justify-end gap-2 sm:flex">
 		<a href={href('/search')}>
 			<Button variant="ghost" class="text-xl">
 				<Icon icon="i-carbon-search" />
