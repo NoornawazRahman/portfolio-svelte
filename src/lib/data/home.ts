@@ -16,7 +16,7 @@ const hero: {
 		{ label: 'GitHub', href: 'https://github.com/NoornawazRahman', icon: 'i-carbon-logo-github' },
 		{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-noornawaz-rahman/', icon: 'i-carbon-logo-linkedin' },
 		// { label: 'Twitter', href: 'https://twitter.com', icon: 'i-carbon-logo-twitter' },
-		{ label: 'Email', href: 'mailto:mdnoornawazrahman@gmail.com', icon: 'i-carbon-at' }
+		{ label: 'Email', href: 'mailto:mdnoornawazrahman@gmail.com', icon: 'i-carbon-email' }
 	]
 };
 
