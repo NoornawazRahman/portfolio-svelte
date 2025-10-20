@@ -11,12 +11,12 @@ const hero: {
 } = {
 	title: `${BaseData.fullName},`,
 	description:
-		'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+		'Self made software developer, passionate about creating high quality and performant applications.',
 	links: [
-		{ label: 'GitHub', href: 'https://github.com', icon: 'i-carbon-logo-github' },
-		{ label: 'LinkedIn', href: 'https://linkedin.com', icon: 'i-carbon-logo-linkedin' },
-		{ label: 'Twitter', href: 'https://twitter.com', icon: 'i-carbon-logo-twitter' },
-		{ label: 'Email', href: 'mailto:riadh.adrani@pm.me', icon: 'i-carbon-at' }
+		{ label: 'GitHub', href: 'https://github.com/NoornawazRahman', icon: 'i-carbon-logo-github' },
+		{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-noornawaz-rahman/', icon: 'i-carbon-logo-linkedin' },
+		// { label: 'Twitter', href: 'https://twitter.com', icon: 'i-carbon-logo-twitter' },
+		{ label: 'Email', href: 'mailto:mdnoornawazrahman@gmail.com', icon: 'i-carbon-at' }
 	]
 };
 

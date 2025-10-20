@@ -35,7 +35,7 @@
 		</Avatar>
 		<div class="flex flex-col gap-4">
 			<CardTitle>{it.degree}</CardTitle>
-			<Tooltip openDelay={300}>
+			<!-- <Tooltip openDelay={300}>
 				<TooltipTrigger>
 					<Muted className="flex flex-row items-center gap-2">
 						<Icon icon="i-carbon-location" />
@@ -43,7 +43,32 @@
 					</Muted>
 				</TooltipTrigger>
 				<TooltipContent>Location</TooltipContent>
+			</Tooltip> -->
+
+			<!--  -->
+			<!-- Organization -->
+			<Tooltip openDelay={300}>
+				<TooltipTrigger>
+					<Muted className="flex flex-row items-center gap-2 justify-start text-left w-full">
+						<Icon icon="i-carbon-building" />
+						<div>{it.organization}</div>
+					</Muted>
+				</TooltipTrigger>
+				<TooltipContent>Institution</TooltipContent>
 			</Tooltip>
+
+			<!-- Location -->
+			<Tooltip openDelay={300}>
+				<TooltipTrigger>
+					<Muted className="flex flex-row items-center gap-2">
+						<Icon icon="i-carbon-location" />
+						<div>{it.location}</div>
+					</Muted>
+				</TooltipTrigger>
+				<TooltipContent>Location</TooltipContent>
+			</Tooltip>
+
+			<!--  -->
 			<Tooltip openDelay={300}>
 				<TooltipTrigger>
 					<Muted className="flex flex-row items-center gap-2">
@@ -63,11 +88,11 @@
 				</TooltipTrigger>
 			</Tooltip>
 			<div class="py-2 text-sm text-muted-foreground">{ellipsify(it.shortDescription, 150)}</div>
-			<div class="flex flex-row flex-wrap gap-2">
+			<!-- <div class="flex flex-row flex-wrap gap-2">
 				{#each it.subjects as subject (subject)}
 					<Badge variant="secondary">{subject}</Badge>
 				{/each}
-			</div>
+			</div> -->
 		</div>
 	</CardContent>
 </FancyCard>

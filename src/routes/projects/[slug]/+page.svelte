@@ -14,7 +14,12 @@
 	import { computeExactDuration, getMonthAndYear, href } from '$lib/utils';
 	import { mode } from 'mode-watcher';
 
-	let { data }: { data: { item?: Project } } = $props();
+	// let { data }: { data: { item?: Project } } = $props();
+
+	// export let data: { item?: Project; markdownText: string }
+
+	let { data }: { data: { item?: Project; markdownText: string } } = $props();
+
 
 	let title = $derived(`${data?.item?.name ?? 'Not Found'} - Projects`);
 	let banner = $derived(
@@ -27,6 +32,27 @@
 			data.item?.period.to
 		)}`
 	);
+
+
+	// import { onMount } from 'svelte';
+	// import Markdown from '$lib/components/common/markdown/markdown.svelte';
+
+	// export let data;
+
+	// let markdownText = $state('');
+
+	// onMount(async () => {
+	// 	if (data.item?.githubReadme) {
+	// 		const res = await fetch(data.item.githubReadme);
+	// 		markdownText = await res.text();
+	// 	} else {
+	// 		markdownText = data.item?.description ?? ' ';
+	// 	}
+	// });
+
+
+
+	
 </script>
 
 <BasePage {title}>
@@ -61,11 +87,9 @@
 			</div>
 		</FancyBanner>
 		<Separator />
-		{#if data.item.description.trim()}
-			<Markdown content={data.item.description} />
-		{:else}
-			<EmptyMarkdown />
-		{/if}
+
+		<Markdown content={data.markdownText} />
+		
 		<Separator />
 		<div class="flex flex-col gap-2 px-4 pt-4">
 			{#if data.item.screenshots && data.item.screenshots.length > 0}

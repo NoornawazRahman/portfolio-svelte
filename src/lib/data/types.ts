@@ -34,6 +34,7 @@ export interface Item<S extends string = string> {
 	logo: Asset;
 	shortDescription: string;
 	description: string;
+	githubReadme?: string;
 	screenshots?: Array<Screenshot>;
 }
 
