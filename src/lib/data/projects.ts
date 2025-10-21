@@ -3,28 +3,7 @@ import { getSkills } from './skills';
 import type { Project } from './types';
 
 const items: Array<Project> = [
-	{
-		slug: 'android-attendance-app',
-		color: 'blue',
-		githubReadme: 'https://raw.githubusercontent.com/NoornawazRahman/Android-Attendance-App/main/README.md',
-		description:
-			``
-			,
-		shortDescription:
-			' It is a system developed in android studio through which faculty can register the number of students in a particular class then register the number of subjects in that class and can mark the attendance of the students.',
-		links: [
-			{ to: 'https://github.com/NoornawazRahman/Android-Attendance-App', label: 'GitHub Repository' },
-			
-		],
-		logo: Assets.Android,
-		name: 'Android Attendance App',
-		period: {
-			from: new Date('August 2023'),
-			to: new Date('May 2024')
-		},
-		skills: getSkills('java'),
-		type: 'Android App Development'
-	},
+	
 
 	{
 		slug: 'digicertify',
@@ -42,7 +21,7 @@ const items: Array<Project> = [
 		logo: Assets.SpringBoot,
 		name: 'DigiCertify - Web Based Document Authentication With Digital Signature',
 		period: {
-			from: new Date('May 2025'),
+			from: new Date(2025,4,19),
 			// to: new Date('July 2025')
 		},
 		skills: getSkills('java', 'postgresql', 'springboot', 'html', 'css', 'thymeleaf'),
@@ -66,7 +45,7 @@ const items: Array<Project> = [
 		logo: Assets.C,
 		name: 'reccat',
 		period: {
-			from: new Date('October 2025'),
+			from: new Date(2025,9,18),
 			// to: new Date('July 2025')
 		},
 		skills: getSkills('c'),
@@ -90,12 +69,61 @@ const items: Array<Project> = [
 		logo: Assets.ReactJs,
 		name: 'Portfolio React Tailwind',
 		period: {
-			from: new Date('October 2025'),
+			from: new Date(2025,9,19),
 			// to: new Date('July 2025')
 		},
 		skills: getSkills('reactjs', 'js', 'html', 'css', 'tailwind'),
 		type: 'Frontend Web Development'
 	},
+
+
+	{
+		slug: 'portfolio-svelte',
+		color: 'blue',
+		githubReadme: 'https://raw.githubusercontent.com/NoornawazRahman/portfolio-svelte/refs/heads/main/README.md',
+		description:
+			``
+			,
+		shortDescription:
+			'Modern portfolio website built with SvelteKit 5, TypeScript & Tailwind CSS. Features dark mode, project showcase, coding stats integration, and responsive design.',
+		links: [
+			{ to: 'https://github.com/NoornawazRahman/portfolio-svelte', label: 'GitHub Repository' },
+			{ to: 'https://portfolio-svelte-six.vercel.app/', label: 'Website URL' },
+			
+		],
+		logo: Assets.Svelte,
+		name: 'Portfolio Svelte',
+		period: {
+			from: new Date(2025,9,20),
+			// to: new Date('July 2025')
+		},
+		skills: getSkills('svelte', 'js', 'html', 'css', 'tailwind', 'ts'),
+		type: 'Frontend Web Development'
+	},
+
+	{
+		slug: 'android-attendance-app',
+		color: 'blue',
+		githubReadme: 'https://raw.githubusercontent.com/NoornawazRahman/Android-Attendance-App/main/README.md',
+		description:
+			``
+			,
+		shortDescription:
+			' It is a system developed in android studio through which faculty can register the number of students in a particular class then register the number of subjects in that class and can mark the attendance of the students.',
+		links: [
+			{ to: 'https://github.com/NoornawazRahman/Android-Attendance-App', label: 'GitHub Repository' },
+			
+		],
+		logo: Assets.Android,
+		name: 'Android Attendance App',
+		period: {
+			from: new Date('August 2023'),
+			to: new Date('May 2024')
+		},
+		skills: getSkills('java'),
+		type: 'Android App Development'
+	},
+
 	// {
 	// 	slug: 'slick-portfolio-angular',
 	// 	color: '#5e95e3',

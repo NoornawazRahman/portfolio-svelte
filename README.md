@@ -1,8 +1,8 @@
 # Md Noornawaz Rahman - Portfolio
 
-A modern, responsive developer portfolio website built with SvelteKit 5, featuring a sleek design inspired by Vercel's aesthetic. This portfolio showcases skills, projects, experience, and education in an interactive and visually appealing manner.
+Modern portfolio website built with SvelteKit 5, TypeScript & Tailwind CSS. Features dark mode, project showcase, coding stats integration, and responsive design.
 
-![Portfolio Screenshot](static/favicon.png)
+
 
 ## ✨ Features
 
