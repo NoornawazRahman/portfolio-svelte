@@ -1,136 +1,261 @@
-# Slick Portfolio With Svelte.
+# Md Noornawaz Rahman - Portfolio
 
-Vercel-like style portfolio template for developers.
+A modern, responsive developer portfolio website built with SvelteKit 5, featuring a sleek design inspired by Vercel's aesthetic. This portfolio showcases skills, projects, experience, and education in an interactive and visually appealing manner.
 
-[For a reference, check out my personal protfolio, slightly changed, but uses this template.](https://riadhadrani.github.io/RiadhAdrani)
+![Portfolio Screenshot](static/favicon.png)
 
-## Libraries
+## ✨ Features
 
-The main libraries used here are :
+- **Modern Tech Stack**: Built with SvelteKit 5, TypeScript, and Tailwind CSS
+- **Responsive Design**: Fully responsive layout that works seamlessly on all devices
+- **Dark/Light Mode**: Toggle between dark and light themes with smooth transitions
+- **Interactive Components**: 
+  - Skill carousel on homepage
+  - Searchable projects, skills, and experience
+  - Filterable project gallery
+  - Animated skill badges
+- **Markdown Support**: Content rendered from markdown with syntax highlighting
+- **SEO Friendly**: Proper meta tags and semantic HTML structure
+- **GitHub Integration**: Fetch and display README files from GitHub repositories
+- **Coding Profiles Integration**: Display stats from LeetCode, GeeksForGeeks, Codeforces, and CodeChef
 
-- `shadcn-svelte` : component library.
-- `tailwindcss` : css styling.
-- `unocss` : fonts and icons.
-  - using `carbon` (and thus the icon names `i-carbon-*`) icons that could be browsed [here](https://icones.js.org/collection/carbon)
-- `mode-watcher` : color mode utility.
-- `prismjs` : markdown parsing in combination with `marked`, `marked-mangle`, `marked-gfm-heading-id` and `dompurify`.
+## 🚀 Tech Stack
 
-## Create
+- **Framework**: [SvelteKit](https://kit.svelte.dev/) 5
+- **Styling**: 
+  - [Tailwind CSS](https://tailwindcss.com/)
+  - [UnoCSS](https://unocss.dev/) for fonts and icons
+  - [shadcn-svelte](https://www.shadcn-svelte.com/) for UI components
+- **Language**: TypeScript
+- **Icons**: Carbon Icons via UnoCSS
+- **Markdown**: Marked with syntax highlighting (Prism.js)
+- **Theme**: mode-watcher for dark/light mode
+- **Deployment**: Optimized for static site generation
 
-You can either clone or fork this repository :
+## 📦 Installation
 
-### `fork`
+### Prerequisites
 
-You can fork the project, maintaining a link to the original repo using the `fork` button, make sure the check the `Copy the master branch only` checkbox.
+- Node.js (v18 or higher)
+- npm, pnpm, or yarn
 
-![alt text](./screenshots/image.png)
+### Setup
 
-### `clone`
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/NoornawazRahman/slick-portfolio-svelte-5.git
+   cd slick-portfolio-svelte-5
+   ```
 
-- using `git` :
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   pnpm install
+   # or
+   yarn install
+   ```
 
-```bash
-# ssh
-git clone git@github.com:RiadhAdrani/slick-portfolio-svelte-5.git protfolio
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
 
-# https
-git clone https://github.com/RiadhAdrani/slick-portfolio-svelte-5.git protfolio
+4. **Open your browser**
+   Navigate to `http://localhost:5173`
+
+## 🛠️ Configuration
+
+### Personal Information
+
+Update the following files in `src/lib/data/`:
+
+- **`base.ts`**: Your name and basic info
+- **`home.ts`**: Homepage hero section and social links
+- **`nav-bar.ts`**: Navigation menu items
+- **`skills.ts`**: Your technical skills
+- **`projects.ts`**: Your projects
+- **`experience.ts`**: Work experience
+- **`education.ts`**: Educational background
+
+### Base Path Configuration
+
+If deploying to a subdirectory (e.g., GitHub Pages), update `svelte.config.js`:
+
+```javascript
+const base = '/your-repo-name';
 ```
 
-- using `degit` npm executable :
+For root domain deployment, set:
 
-```bash
-npx degit RiadhAdrani/slick-portfolio-svelte-5 portfolio
-```
-
-if you don't have `degit`, it will prompt you to accept, enter `y`.
-
-> You can add the main repo as another remote repo to maintain updates in the future.
->
-> ```bash
-> # ssh
-> git remote add main git@github.com:RiadhAdrani/slick-portfolio-svelte-5.git
-> ```
-
-## Deploy to GitHub pages
-
-Before deploying to `GitHub Pages`:
-
-### Enable workflows for `Forks`
-
-If you forked the repo, go to the `Actions` tab in the newly generated repository, and enable workflows, click on the green button `I understand my workflows, go ahead and enable them` :
-
-![alt text](./screenshots/enable-fork-workflow.png)
-
-### Actions Settings
-
-Allow `GitHub Pages` in your repo settings with correct permissions:
-
-- go to your repo `Settings` > `Actions` > `General`
-- in `Actions permissions` : make sure that `Allow all actions and reusable workflows` checkbox is checked
-
-![alt text](./screenshots/settings-actions.png)
-
-### svelte.config.js
-
-Depending on the name of your repository, you would like to set the `base` variable to that, starting with a leading slash like this:
-
-```js
-const base = '/slick-portfolio-svelte';
-```
-
-But if your repository name is the same as your Github domain name; my Github name is `RiadhAdrani` so my domain name is `riadhadrani.github.io` (lower cased), and so the special repository name is also `riadhadrani.github.io`: if that is the case, you need to set the base to an empty string
-
-```js
+```javascript
 const base = '';
 ```
 
-### Launching the build and deploy workflow
+### Assets
 
-If you didn't commit and push the changes in the `svelte.config.js` yet, you can do that now, otherwise you can create an empty commit:
+- Add logos to `static/logos/`
+- Update `src/lib/data/assets.ts` with your asset paths
+- Replace `static/favicon.png` with your own favicon
 
-```bash
-git commit --allow-empty -m "chore: trigger workflow"
+### Styling
+
+- Global styles: `src/app.css`
+- Markdown styles: `src/markdown.css`
+- Tailwind config: `tailwind.config.ts`
+- Theme colors: Update CSS variables in `src/app.css`
+
+## 📝 Adding Content
+
+### Adding a New Project
+
+Edit `src/lib/data/projects.ts`:
+
+```typescript
+{
+  slug: 'project-slug',
+  color: 'blue',
+  name: 'Project Name',
+  shortDescription: 'Brief description',
+  description: 'Detailed description in markdown',
+  githubReadme: 'https://raw.githubusercontent.com/user/repo/main/README.md',
+  links: [
+    { to: 'https://github.com/user/repo', label: 'GitHub' }
+  ],
+  logo: Assets.YourLogo,
+  period: {
+    from: new Date('2024-01-01'),
+    to: new Date('2024-06-01')
+  },
+  skills: getSkills('typescript', 'react'),
+  type: 'Web Application'
+}
 ```
 
-and push it to your `master` or `main` branch.
+### Adding a New Skill
 
-In the `Actions` tab, make sure that the `Build and Deploy` workflow is successful (wait for it to complete): you should have at least one successfull workflow run:
+Edit `src/lib/data/skills.ts`:
 
-![alt text](./screenshots/build-and-deploy-action.png)
+```typescript
+defineSkill({
+  slug: 'skill-slug',
+  color: 'blue',
+  description: 'Skill description in markdown',
+  logo: Assets.SkillLogo,
+  name: 'Skill Name',
+  category: 'framework'
+})
+```
 
-### Enable GitHub pages
+### Adding Experience
 
-- go to your repo's `Settings` > `Pages`
-- in Source section, select `Deploy from a branch`.
-- in Branch section, select `gh-pages` and `/ (root)` and click on save
+Edit `src/lib/data/experience.ts`:
 
-![alt text](./screenshots/enable-gh-pages.png)
+```typescript
+{
+  slug: 'job-slug',
+  company: 'Company Name',
+  description: 'Job description',
+  contract: ContractType.FullTime,
+  type: 'Software Development',
+  location: 'City, Country',
+  period: { from: new Date(2023, 0, 1), to: new Date(2024, 0, 1) },
+  skills: getSkills('typescript', 'react'),
+  name: 'Job Title',
+  color: 'blue',
+  links: [],
+  logo: Assets.CompanyLogo,
+  shortDescription: 'Brief description'
+}
+```
 
-Again in the `Actions` tab, make sure that the `pages-build-deployment` workflow is successful (wait for it to complete): you should have at least one successfull workflow run:
+## 🚀 Deployment
 
-![alt text](./screenshots/pages-build-deployment-action.png)
+### GitHub Pages
 
-> If for some reason no action was launched, try pushing empty commit.
+1. Update `svelte.config.js` with your repository name
+2. Push to GitHub
+3. Enable GitHub Actions (if not already enabled)
+4. The workflow in `.github/workflows/deploy.yml` will automatically build and deploy
 
-## That's it
+### Other Platforms
 
-That's it, you can click on the latest deployment and visit it.
+Build the static site:
 
-## Adapt to your needs
+```bash
+npm run build
+```
 
-If you want to use the template as it is, you can :
+The output will be in the `build/` directory. Deploy this to:
+- **Vercel**: Connect your repository
+- **Netlify**: Drag and drop the build folder
+- **Custom Server**: Serve the build directory with any static file server
 
-- update files in `src/lib/data` with your data.
-- update `src/lib/index.css` for custom styling.
-- update `src/lib/index.css` for custom markdown styling.
+## 🎨 Customization
 
-- update `static/favicon.png` to customize the tab's icon.
+### Colors
 
-- You can find `shadcn-svelte` component in `src/lib/components/ui`, other components are arranged by their page, or in the `common` folder.
+Update theme colors in `src/app.css`:
 
-But feel free to explore and hack the template to your needs if you feel like it.
+```css
+:root {
+  --primary: 243 0% 4%;
+  --secondary: 243 10% 90%;
+  /* ... other colors */
+}
+```
 
-## Known issues:
+### Fonts
 
-- Svelte no longer support `node 14`, use a newer version instead.
+Update fonts in `uno.config.ts`:
+
+```typescript
+fonts: {
+  sans: {
+    name: 'Your Font',
+    weights: [400, 700],
+    provider: 'google'
+  }
+}
+```
+
+### Components
+
+All reusable components are in `src/lib/components/`:
+- `common/`: Shared components
+- `ui/`: UI library components (shadcn-svelte)
+- Custom components for projects, skills, etc.
+
+## 📄 License
+
+This project uses a dual MIT License:
+
+- **Original template** by [Riadh Adrani](https://github.com/RiadhAdrani) (2024)
+- **Modifications** by Md Noornawaz Rahman (2025)
+
+Both are licensed under the MIT License. See the [LICENSE](./LICENSE) file for full details.
+
+## 🙏 Acknowledgments
+
+- Original template: [slick-portfolio-svelte](https://github.com/RiadhAdrani/slick-portfolio-svelte-5)
+- UI Components: [shadcn-svelte](https://www.shadcn-svelte.com/)
+- Icons: [Carbon Design System](https://carbondesignsystem.com/)
+
+## 📞 Contact
+
+- **GitHub**: [@NoornawazRahman](https://github.com/NoornawazRahman)
+- **LinkedIn**: [Md Noornawaz Rahman](https://www.linkedin.com/in/md-noornawaz-rahman/)
+- **Email**: mdnoornawazrahman@gmail.com
+
+## 🐛 Known Issues
+
+- Svelte no longer supports Node 14; use Node 18 or higher
+- Browser storage APIs (localStorage/sessionStorage) are not used per best practices
+
+## 🤝 Contributing
+
+While this is a personal portfolio, suggestions and improvements are welcome! Feel free to open an issue or submit a pull request.
+
+---
+
+**Made with ❤️ using SvelteKit**
